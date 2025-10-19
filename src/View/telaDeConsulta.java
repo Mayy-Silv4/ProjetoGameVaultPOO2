@@ -35,7 +35,6 @@ public class telaDeConsulta extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -77,31 +76,31 @@ public class telaDeConsulta extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 557, 111));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setBackground(new java.awt.Color(255, 0, 51));
         jButton4.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
         jButton4.setText("Excluir");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, 148, 38));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, 148, 38));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
         jButton5.setText("Adicionar");
         jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 200, 40));
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 0));
-        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
-        jButton6.setText("Editar");
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 380, 147, 39));
-
-        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
         jButton7.setText("Voltar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 190, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/134192_information_question_icon (1).png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 130, 130));
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 240, 40));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/115695_magnifying glass_zoom_find_search_icon (1).png"))); // NOI18N
         jButton1.setText("Pesquisar");
@@ -136,6 +135,11 @@ public class telaDeConsulta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+       new MenuPrincipal().setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,7 +180,6 @@ public class telaDeConsulta extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;

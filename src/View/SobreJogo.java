@@ -83,7 +83,7 @@ public class SobreJogo extends javax.swing.JFrame {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 500, 50));
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 570, 139));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jButton3.setText("VOLTAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {

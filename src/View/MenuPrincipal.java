@@ -29,9 +29,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnCadastro = new javax.swing.JButton();
+        btnJogos = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -43,38 +43,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 72, 145));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 58)); // NOI18N
-        jButton1.setText("CADASTRO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastro.setBackground(new java.awt.Color(51, 102, 255));
+        btnCadastro.setFont(new java.awt.Font("Times New Roman", 1, 58)); // NOI18N
+        btnCadastro.setText("CADASTRO");
+        btnCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCadastroActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 430, 90));
+        jPanel1.add(btnCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 430, 90));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 58)); // NOI18N
-        jButton2.setText("JOGOS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnJogos.setBackground(new java.awt.Color(204, 255, 255));
+        btnJogos.setFont(new java.awt.Font("Times New Roman", 1, 58)); // NOI18N
+        btnJogos.setText("JOGOS");
+        btnJogos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnJogosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 430, 80));
+        jPanel1.add(btnJogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 430, 80));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 58)); // NOI18N
-        jButton3.setText("SAIR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setBackground(new java.awt.Color(255, 0, 51));
+        btnSair.setFont(new java.awt.Font("Times New Roman", 1, 58)); // NOI18N
+        btnSair.setText("SAIR");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 430, 80));
+        jPanel1.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 430, 80));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/134216_menu_lines_hamburger_icon (1).png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -94,17 +94,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
+ new Cadastro().setVisible(true);       
+        dispose();
+    }//GEN-LAST:event_btnCadastroActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogosActionPerformed
+      new telaDeConsulta().setVisible(true);
+      dispose();
+    }//GEN-LAST:event_btnJogosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+          dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,9 +144,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnCadastro;
+    private javax.swing.JButton btnJogos;
+    private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
