@@ -5,6 +5,10 @@
  */
 package View;
 
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author rafae
@@ -27,65 +31,69 @@ public class Cadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtGenero = new javax.swing.JTextField();
+        txtClassificacao = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtTitulo1 = new javax.swing.JTextField();
+        txtTitulo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtGenero1 = new javax.swing.JTextField();
+        txtGenero = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtGenero2 = new javax.swing.JTextField();
+        txtPlataforma = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtGenero3 = new javax.swing.JTextField();
+        txtDesenvolvedora = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         btnCadastrar = new javax.swing.JButton();
-        btnCancelar1 = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JButton();
+
+        jFormattedTextField1.setText("jFormattedTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 72, 145));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 520, 930, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 520, 980, 10));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 65)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("CADASTRO DE JOGOS");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 710, 50));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 710, 50));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Classificação Etária:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
-        jPanel1.add(txtGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 200, 40));
+        jPanel1.add(txtClassificacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 200, 40));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Titulo Do Jogo:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
-        jPanel1.add(txtTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 280, 40));
+        jPanel1.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 280, 40));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Gênero:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
-        jPanel1.add(txtGenero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 190, 40));
+        jPanel1.add(txtGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 190, 40));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Plataforma Disponíveis:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
-        jPanel1.add(txtGenero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 180, 40));
+        jPanel1.add(txtPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 180, 40));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Desenvolvedora/Estúdio:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
-        jPanel1.add(txtGenero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 270, 40));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 92, 910, 10));
+        jPanel1.add(txtDesenvolvedora, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 270, 40));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 92, 970, 10));
 
         btnCadastrar.setBackground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
@@ -95,20 +103,30 @@ public class Cadastro extends javax.swing.JFrame {
                 btnCadastrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, 260, 50));
+        jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 260, 50));
 
-        btnCancelar1.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        btnCancelar1.setText("CANCELAR");
-        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 204));
+        btnLimpar.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        btnLimpar.setText("LIMPAR");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelar1ActionPerformed(evt);
+                btnLimparActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 570, 240, 50));
+        jPanel1.add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 240, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/416393_controller_fun_games_gaming_play_icon (1).png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, 70, 70));
+
+        btnCancelar.setBackground(new java.awt.Color(255, 0, 51));
+        btnCancelar.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 570, 240, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,20 +136,100 @@ public class Cadastro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
+       // Dados do banco
+    String url = "jdbc:mysql://localhost:3306/gamevault";
+    String usuario = "root";         // Substitua pelo seu usuário do MySQL
+    String senha = "";               // Substitua pela sua senha (pode ser vazia)
+
+    // Obter os valores dos campos
+    String titulo = txtTitulo.getText().trim();
+    String genero = txtGenero.getText().trim();
+    String plataforma = txtPlataforma.getText().trim();
+    String desenvolvedora = txtDesenvolvedora.getText().trim();
+    String classificacao = txtClassificacao.getText().trim();
+
+    // Validação simples
+    if (titulo.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "O título do jogo é obrigatório!");
+        return;
+    }
+
+    // Variáveis para recursos do banco
+    java.sql.Connection conn = null;
+    java.sql.PreparedStatement stmt = null;
+
+    try {
+        // Carregar o driver (opcional em versões recentes do JDBC, mas bom manter)
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Conectar ao banco
+        conn = java.sql.DriverManager.getConnection(url, usuario, senha);
+
+        // Comando SQL
+        String sql = "INSERT INTO cadjogos (titulo, genero, plataforma, desenvolvedora, classificacao_etaria) VALUES (?, ?, ?, ?, ?)";
+        stmt = conn.prepareStatement(sql);
+
+        // Preencher os parâmetros
+        stmt.setString(1, titulo);
+        stmt.setString(2, genero);
+        stmt.setString(3, plataforma);
+        stmt.setString(4, desenvolvedora);
+        stmt.setString(5, classificacao);
+
+        // Executar
+        int linhas = stmt.executeUpdate();
+
+        if (linhas > 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Jogo cadastrado com sucesso!");
+            // Limpar campos após cadastro
+            txtTitulo.setText("");
+            txtGenero.setText("");
+            txtPlataforma.setText("");
+            txtDesenvolvedora.setText("");
+            txtClassificacao.setText("");
+            txtTitulo.requestFocus();
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Falha ao cadastrar o jogo.");
+        }
+
+    } catch (ClassNotFoundException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Driver do MySQL não encontrado!");
+    } catch (java.sql.SQLException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Erro no banco de dados: " + e.getMessage());
+    } finally {
+        // Fechar recursos (sempre!)
+        try {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        } catch (java.sql.SQLException e) {
+        }
+    }
+        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
-        new MenuPrincipal().setVisible(true);
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+ txtTitulo.setText("");
+    txtGenero.setText("");
+    txtPlataforma.setText("");
+    txtDesenvolvedora.setText("");
+    txtClassificacao.setText("");
+    
+    // Opcional: colocar o foco no primeiro campo após limpar
+    txtTitulo.requestFocus();
+            
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+      new MenuPrincipal().setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnCancelar1ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +268,9 @@ public class Cadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnCancelar1;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -181,10 +281,10 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField txtClassificacao;
+    private javax.swing.JTextField txtDesenvolvedora;
     private javax.swing.JTextField txtGenero;
-    private javax.swing.JTextField txtGenero1;
-    private javax.swing.JTextField txtGenero2;
-    private javax.swing.JTextField txtGenero3;
-    private javax.swing.JTextField txtTitulo1;
+    private javax.swing.JTextField txtPlataforma;
+    private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }
