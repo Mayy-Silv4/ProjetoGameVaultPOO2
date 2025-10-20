@@ -37,18 +37,18 @@ src/
    * ├── view/
    * │   ├── Cadastro.java
    * │   ├── Login.java
-    *│   ├── MenuPrincipal.java
-    *│   ├── SobreJogo.java
+   * │   ├── MenuPrincipal.java
+   * │   ├── SobreJogo.java
    * │   └── TelaDeConsulta.java
    * │
-    *├── controller/
+   * ├── controller/
    * │   ├── JogoController.java
    * │   └── UsuarioController.java
-    *│
-    *└── dao/
-     *   ├── AbstractDAO.java
-      *  ├── JogoDAO.java
-     *   └── UsuarioDAO.java
+   * │
+   *└── dao/
+     * ├── AbstractDAO.java
+     * ├── JogoDAO.java
+     * └── UsuarioDAO.java
 
 ![501696891-b3517bff-0e11-47ae-8768-0c3daa11eb3e](https://github.com/user-attachments/assets/bf168565-a273-4399-9dcd-bfe175194140)
 
