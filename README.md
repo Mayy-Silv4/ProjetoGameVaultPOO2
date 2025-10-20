@@ -54,7 +54,12 @@ Desenvolvimento de um CRUD (Create, Read, Update, Delete)
 # 🎨 Mockup do Projeto
 * Interface desenvolvida no NetBeans , com foco em usabilidade e clara:
   
-<img width="666" height="371" alt="image" src="https://github.com/user-attachments/assets/b3aca5b8-fe0a-4896-8110-d30ef60df319" />
+<img width="694" height="649" alt="CadastroUsu" src="https://github.com/user-attachments/assets/67bfc704-28ff-48a6-aeac-add7fb87d40c" />
+<img width="673" height="597" alt="Login" src="https://github.com/user-attachments/assets/640dff49-2c4e-4928-9bf7-fbac93e3b7e2" />
+<img width="688" height="600" alt="Menu" src="https://github.com/user-attachments/assets/1f67a593-9ed8-43e2-b024-68d175f19ccf" />
+<img width="963" height="706" alt="Cadastro" src="https://github.com/user-attachments/assets/8d8996e0-5562-4c7c-87dd-b22e32c3edde" />
+<img width="1019" height="694" alt="Busca" src="https://github.com/user-attachments/assets/f9364c41-eee1-478f-a981-33d5f8e6fdab" />
+
 
 # 🧭 Wireframe do Projeto
 * O design inicial da interface foi planejado no Canva , garantindo uma experiência de usuário intuitiva:
