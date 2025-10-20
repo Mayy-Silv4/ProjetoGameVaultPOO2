@@ -5,6 +5,13 @@
  */
 package View;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rafae
@@ -32,13 +39,13 @@ public class telaDeConsulta extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        tblItens = new javax.swing.JTable();
+        btnExcluir = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtPesquisa = new javax.swing.JTextField();
+        btnPesquisar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,8 +63,8 @@ public class telaDeConsulta extends javax.swing.JFrame {
         jLabel7.setText("Buscar pelo nome do jogo:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, 50));
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblItens.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tblItens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -72,39 +79,54 @@ public class telaDeConsulta extends javax.swing.JFrame {
                 "ID", "Nome", "Plataforma", "Titulo", "Data"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblItens);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 557, 111));
 
-        jButton4.setBackground(new java.awt.Color(255, 0, 51));
-        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
-        jButton4.setText("Excluir");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, 148, 38));
-
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
-        jButton5.setText("Adicionar");
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 200, 40));
-
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
-        jButton7.setText("Voltar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.setBackground(new java.awt.Color(255, 0, 51));
+        btnExcluir.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 190, 40));
+        jPanel2.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, 148, 38));
+
+        btnAdicionar.setBackground(new java.awt.Color(255, 255, 255));
+        btnAdicionar.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
+        btnAdicionar.setText("Adicionar");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 200, 40));
+
+        btnVoltar.setBackground(new java.awt.Color(255, 255, 255));
+        btnVoltar.setFont(new java.awt.Font("Times New Roman", 0, 30)); // NOI18N
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 190, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/134192_information_question_icon (1).png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 130, 130));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 240, 40));
+        jPanel2.add(txtPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 240, 40));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/115695_magnifying glass_zoom_find_search_icon (1).png"))); // NOI18N
-        jButton1.setText("Pesquisar");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 180, 50));
+        btnPesquisar.setBackground(new java.awt.Color(255, 255, 255));
+        btnPesquisar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/115695_magnifying glass_zoom_find_search_icon (1).png"))); // NOI18N
+        btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 180, 50));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1030, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -136,10 +158,136 @@ public class telaDeConsulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
        new MenuPrincipal().setVisible(true);
        dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        new Cadastro().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+      String termo = txtPesquisa.getText().trim();
+
+    if (termo.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Digite o nome do jogo para pesquisar!");
+        return;
+    }
+
+    DefaultTableModel modelo = (DefaultTableModel) tblItens.getModel();
+    String url = "jdbc:mysql://localhost:3306/gamevault";
+    String usuario = "root";
+    String senha = "";
+   
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "SELECT titulo, genero, plataforma, desenvolvedora, classificacao_etaria FROM cadjogos WHERE titulo LIKE ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, "%" + termo + "%");
+
+        ResultSet rs = stmt.executeQuery();
+
+        boolean encontrouNovo = false;
+        while (rs.next()) {
+            String titulo = rs.getString("titulo");
+            String genero = rs.getString("genero");
+            String plataforma = rs.getString("plataforma");
+            String desenvolvedora = rs.getString("desenvolvedora");
+            String classificacao = rs.getString("classificacao_etaria");
+
+            // 🔍 Verifica se o título já está na tabela (em qualquer posição)
+            boolean jaExiste = false;
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                String tituloTabela = (String) modelo.getValueAt(i, 0);
+                if (tituloTabela != null && tituloTabela.equalsIgnoreCase(titulo)) {
+                    jaExiste = true;
+                    break;
+                }
+            }
+
+            // ✅ Só adiciona se NÃO existir — e adiciona no TOPO (posição 0)
+            if (!jaExiste) {
+                Object[] linha = {titulo, genero, plataforma, desenvolvedora, classificacao};
+                modelo.insertRow(0, linha); // ← INSERE NO INÍCIO!
+                encontrouNovo = true;
+            }
+        }
+
+        rs.close();
+        stmt.close();
+        conn.close();
+
+        if (!encontrouNovo) {
+            JOptionPane.showMessageDialog(this, "Nenhum novo jogo encontrado ou todos já estão na lista.");
+        }
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro ao pesquisar: " + e.getMessage());
+        e.printStackTrace();
+    }
+
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) tblItens.getModel();
+    int linhaSelecionada = tblItens.getSelectedRow();
+
+    if (linhaSelecionada == -1) {
+        JOptionPane.showMessageDialog(this, "Selecione um jogo na tabela para excluir!");
+        return;
+    }
+
+    // Pegar o TÍTULO da linha selecionada (coluna 0 = "Nome")
+    String titulo = (String) modelo.getValueAt(linhaSelecionada, 0);
+
+    // Confirmação
+    int confirma = JOptionPane.showConfirmDialog(
+        this,
+        "Tem certeza que deseja excluir o jogo \"" + titulo + "\"?",
+        "Confirmar Exclusão",
+        JOptionPane.YES_NO_OPTION
+    );
+
+    if (confirma != JOptionPane.YES_OPTION) {
+        return; // Cancelou
+    }
+
+    // Conexão com o banco
+    String url = "jdbc:mysql://localhost:3306/gamevault";
+    String usuario = "root";
+    String senha = "";
+
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(url, usuario, senha);
+
+        // Excluir pelo TÍTULO
+        String sql = "DELETE FROM cadjogos WHERE titulo = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, titulo);
+
+        int linhas = stmt.executeUpdate();
+
+        if (linhas > 0) {
+            // Remove da tabela
+            modelo.removeRow(linhaSelecionada);
+            JOptionPane.showMessageDialog(this, "Jogo excluído com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro: Jogo não encontrado no banco.");
+        }
+
+        stmt.close();
+        conn.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro ao excluir: " + e.getMessage());
+        e.printStackTrace();
+    }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,10 +325,10 @@ public class telaDeConsulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -188,7 +336,7 @@ public class telaDeConsulta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblItens;
+    private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }
