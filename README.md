@@ -30,8 +30,6 @@ Desenvolvimento de um CRUD (Create, Read, Update, Delete)
 * Canva
 
 # Estrutura do Projeto
-  # 🗃️ Banco de Dados
-* O esquema do banco de dados foi projetado para armazenar informações essenciais sobre os jogos cadastrados:
 src/
 *└── br.ulbra/
    * ├── view/
@@ -49,6 +47,8 @@ src/
      * ├── AbstractDAO.java
      * ├── JogoDAO.java
      * └── UsuarioDAO.java
+  # 🗃️ Banco de Dados
+* O esquema do banco de dados foi projetado para armazenar informações essenciais sobre os jogos cadastrados:
 
 ![501696891-b3517bff-0e11-47ae-8768-0c3daa11eb3e](https://github.com/user-attachments/assets/bf168565-a273-4399-9dcd-bfe175194140)
 
