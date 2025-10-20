@@ -33,22 +33,22 @@ Desenvolvimento de um CRUD (Create, Read, Update, Delete)
   # 🗃️ Banco de Dados
 * O esquema do banco de dados foi projetado para armazenar informações essenciais sobre os jogos cadastrados:
 src/
-└── br.ulbra/
-    ├── view/
-    │   ├── Cadastro.java
-    │   ├── Login.java
-    │   ├── MenuPrincipal.java
-    │   ├── SobreJogo.java
-    │   └── TelaDeConsulta.java
-    │
-    ├── controller/
-    │   ├── JogoController.java
-    │   └── UsuarioController.java
-    │
-    └── dao/
-        ├── AbstractDAO.java
-        ├── JogoDAO.java
-        └── UsuarioDAO.java
+*└── br.ulbra/
+   * ├── view/
+   * │   ├── Cadastro.java
+   * │   ├── Login.java
+    *│   ├── MenuPrincipal.java
+    *│   ├── SobreJogo.java
+   * │   └── TelaDeConsulta.java
+   * │
+    *├── controller/
+   * │   ├── JogoController.java
+   * │   └── UsuarioController.java
+    *│
+    *└── dao/
+     *   ├── AbstractDAO.java
+      *  ├── JogoDAO.java
+     *   └── UsuarioDAO.java
 
 ![501696891-b3517bff-0e11-47ae-8768-0c3daa11eb3e](https://github.com/user-attachments/assets/bf168565-a273-4399-9dcd-bfe175194140)
 
