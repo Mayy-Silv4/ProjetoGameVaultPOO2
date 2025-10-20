@@ -30,7 +30,6 @@ Desenvolvimento de um CRUD (Create, Read, Update, Delete)
 * Canva
 
 # Estrutura do Projeto
-src/
 *└── br.ulbra/
    * ├── view/
    * │   ├── Cadastro.java
